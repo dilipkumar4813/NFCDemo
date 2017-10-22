@@ -1,7 +1,6 @@
 package iamdilipkumar.com.androidsecurity.utils;
 
 import android.util.Base64;
-import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,18 +51,7 @@ public class CustomBase64 {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+
         return Base64.encodeToString(data, Base64.DEFAULT);
-    }
-
-    public static String generateJwtToken() {
-        String header = generateJwtHeader();
-        String claim = generateJwtClaim();
-        String s = header + "." + claim;
-
-        String signature = Base64.encodeToString(s.getBytes(), Base64.DEFAULT);
-
-        Log.d("stay",s);
-
-        return s;
     }
 }
